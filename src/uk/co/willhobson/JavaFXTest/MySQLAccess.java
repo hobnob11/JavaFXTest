@@ -5,27 +5,25 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-
+import uk.co.willhobson.JavaFXTest.JavaFXTest;
 public class MySQLAccess {
+	
 	private static Connection connect = null;
 	private static Statement statement = null;
 	private static PreparedStatement preparedStatement = null;
 	private static ResultSet resultSet = null;
+	
 	/*
 	public void readDataBase() throws Exception {
 		try {
 			// load the squiggle driver
 			Class.forName("com.mysql.jdbc.Driver");
-
 			// squiggle to the dibble
 			connect = DriverManager.getConnection("jdbc:mysql://tmp.willhobson.co.uk/feedback?" + "user=guest&password=password");
-
 			// squawk to the squiggle
 			statement = connect.createStatement();
-
 			// become the squiggle
 			resultSet = statement.executeQuery("select * from data_table");
-
 		} catch (Exception e) {
 			throw e;
 		} finally {
@@ -33,11 +31,17 @@ public class MySQLAccess {
 		}
 	}
 	 */
+	
 	public static boolean openConnection() throws Exception {
 		boolean success = false;
+		String Address = "jdbc:mysql://" + 
+				JavaFXTest.SQLProperties.getProperty("server_address") + "/" +
+				JavaFXTest.SQLProperties.getProperty("database") + "?user=" +
+				JavaFXTest.SQLProperties.getProperty("user") + "&password=" +
+				JavaFXTest.SQLProperties.getProperty("password");
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
-			connect = DriverManager.getConnection("jdbc:mysql://tmp.willhobson.co.uk/db?" + "user=guest&password=password");
+			connect = DriverManager.getConnection(Address);
 			success = true;
 		} catch (Exception e) {
 			throw e;
@@ -69,4 +73,14 @@ public class MySQLAccess {
 		}
 	}
 
+	public static Boolean TestConnection() {
+		boolean ret = false;
+		try{
+		ret = openConnection();
+		System.out.println(queryConnection("SHOW TABLES"));
+		closeConnection();
+		}catch(Exception e){e.printStackTrace();}
+		
+		return ret;
+	}
 }

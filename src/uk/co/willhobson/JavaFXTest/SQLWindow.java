@@ -1,8 +1,5 @@
 package uk.co.willhobson.JavaFXTest;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -21,29 +18,7 @@ public class SQLWindow {
 
 			@Override
 			public void handle(ActionEvent event) {
-				System.out.println("lets test the squiggle!");
-				try {
-					MySQLAccess.openConnection();
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				System.out.println("the connections open! probably");
-				ResultSet result = null;
-				try {
-					result = MySQLAccess.queryConnection("SELECT * FROM data_table");
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				try {
-					System.out.println(result.getMetaData());
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				System.out.println("closing connection!");
-				MySQLAccess.closeConnection();
+				MySQLAccess.TestConnection();
 			}
 		});
 		

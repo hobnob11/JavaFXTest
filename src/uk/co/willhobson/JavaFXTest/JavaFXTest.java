@@ -1,7 +1,8 @@
 package uk.co.willhobson.JavaFXTest;
 
+import java.util.Properties;
+
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -12,11 +13,13 @@ import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import uk.co.willhobson.JavaFXTest.cfg.*;
 
 public class JavaFXTest extends Application implements EventHandler {
 	Stage SQLStage = null;
+	public static Properties SQLProperties = null;
+	
 	@Override
 	public void start(Stage stage) throws Exception {
 		// TODO Auto-generated method stub
@@ -60,7 +63,11 @@ public class JavaFXTest extends Application implements EventHandler {
         stage.setScene(scene);
         stage.show();
 	}
+	
 	public static void main(String[] args){
+		System.out.println("made cfg file: " + WritePropertiesFile.init());
+		SQLProperties = ReadPropertiesFile.init();
+		
 		launch(args);
 	}
 	
