@@ -36,10 +36,10 @@ public class MySQLAccess {
 	
 	public static boolean openConnection() throws Exception {
 		boolean success = false;
-		String Address = "jdbc:mysql://" + JavaFXTest.SQLProperties.getProperty( "server_address" ) + "/"
-				+ JavaFXTest.SQLProperties.getProperty( "database" ) + "?user="
-				+ JavaFXTest.SQLProperties.getProperty( "user" ) + "&password="
-				+ JavaFXTest.SQLProperties.getProperty( "password" );
+		String Address = "jdbc:mysql://" + TPSMonitor.SQLProperties.getProperty( "server_address" ) + "/"
+				+ TPSMonitor.SQLProperties.getProperty( "database" ) + "?user="
+				+ TPSMonitor.SQLProperties.getProperty( "user" ) + "&password="
+				+ TPSMonitor.SQLProperties.getProperty( "password" );
 		try {
 			Class.forName( "com.mysql.jdbc.Driver" );
 			connect = DriverManager.getConnection( Address );

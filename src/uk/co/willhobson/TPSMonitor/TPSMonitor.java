@@ -15,7 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class JavaFXTest extends Application implements EventHandler<ActionEvent> {
+public class TPSMonitor extends Application implements EventHandler<ActionEvent> {
 	Stage SQLStage = null;
 	public static Properties SQLProperties = null;
 	
