@@ -1,4 +1,4 @@
-package uk.co.willhobson.TPSMonitor;
+package tpsmonitor;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

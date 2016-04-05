@@ -1,4 +1,4 @@
-package uk.co.willhobson.TPSMonitor;
+package tpsmonitor;
 
 import java.util.Properties;
 

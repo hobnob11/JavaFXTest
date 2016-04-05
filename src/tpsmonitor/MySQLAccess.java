@@ -1,4 +1,4 @@
-package uk.co.willhobson.TPSMonitor;
+package tpsmonitor;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

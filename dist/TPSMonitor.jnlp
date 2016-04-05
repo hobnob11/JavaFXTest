@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="TPSMonitor.jnlp">
+  <information>
+    <title>TPSMonitor</title>
+    <vendor>hobnob</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="TPSMonitor.jar" size="7999" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.38-bin.jar" size="983914" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="TPSMonitor" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="tpsmonitor.TPSMonitor"  name="TPSMonitor" />
+  <update check="always"/>
+</jnlp>

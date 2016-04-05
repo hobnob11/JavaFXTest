@@ -1,4 +1,4 @@
-package uk.co.willhobson.TPSMonitor;
+package tpsmonitor;
 
 import java.io.File;
 import java.io.FileNotFoundException;
